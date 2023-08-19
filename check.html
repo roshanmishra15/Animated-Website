@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    /* Apply basic styles to the anchor tag */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Create the underline animation on hover */
+a.underline-animation {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+a.underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px; /* Adjust this value to position the underline */
+    left: 0;
+    background-color: #007bff; /* Change this color to your desired underline color */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
+    visibility: hidden; /* Start with the underline hidden */
+}
+
+a.underline-animation:hover::after {
+    transform: scaleX(1);
+    visibility: visible; /* Show the underline on hover */
+}
+
+</style>
+<body>
+    <a href="#" class="underline-animation">Hover Me</a>
+</body>
+</html>
